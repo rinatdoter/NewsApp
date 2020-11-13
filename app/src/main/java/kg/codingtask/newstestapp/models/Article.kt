@@ -6,7 +6,7 @@ import java.io.Serializable
 @Entity
 data class Article(
     @PrimaryKey
-    var url: String? = "",
+    var url: String = "",
     var source: Source,
     var author: String?="",
     var title: String? = "",

@@ -6,10 +6,10 @@ import kg.codingtask.newstestapp.BuildConfig
 import kg.codingtask.newstestapp.data.db.AppDataBase
 import kg.codingtask.newstestapp.data.network.NewsApi
 import kg.codingtask.newstestapp.repo.NewsRepository
-import kg.codingtask.newstestapp.ui.details.ArticleDetailsVM
-import kg.codingtask.newstestapp.ui.saved.SavedArticlesVM
 import kg.codingtask.newstestapp.ui.base.ArticlesVM
+import kg.codingtask.newstestapp.ui.details.ArticleDetailsVM
 import kg.codingtask.newstestapp.ui.main.MainVm
+import kg.codingtask.newstestapp.ui.saved.SavedArticlesVM
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
@@ -60,4 +60,4 @@ private fun provideAppDatabase(context: Context): AppDataBase =
         context,
         AppDataBase::class.java,
         AppDataBase.dataBaseName
-    ).build()
+    ).fallbackToDestructiveMigration().build()
